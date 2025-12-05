@@ -28,7 +28,7 @@ export default function Home() {
 
     <div className="flex gap-6 justify-center">
       <img
-        src="/Ponyo.JPG"
+        src="/Ponyo.jpg"
         alt="ponyo"
         className="w-40 h-72 object-cover rounded-3xl shadow-md"
       />
