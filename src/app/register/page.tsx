@@ -12,8 +12,8 @@ import { FormEvent } from 'react';
 export default function RegisterPage() {
     
     const router = useRouter();
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
+    const [first_name, setFirstname] = useState('');
+    const [last_name, setLastname] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -22,10 +22,10 @@ export default function RegisterPage() {
         e.preventDefault();
         setError('');
     
-    const res = await fetch(`${API_BASE}/register`, {
+    const res = await fetch('https://blanconestjs.onrender.com/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify ({ firstname, lastname, username, password }),
+        body: JSON.stringify ({first_name, last_name, username, password }),
     });
 
     const data = await res.json();
@@ -47,8 +47,8 @@ export default function RegisterPage() {
             <CardContent>
             <h1 className="text-xl font-bold mb-4">Register</h1>
             <form onSubmit={handleRegister} className="space-y-4">
-             <Input placeholder="First name" value={firstname} onChange={(e) => setFirstname(e.target.value)}/>
-            <Input placeholder="Last name" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+             <Input placeholder="First name" value={first_name} onChange={(e) => setFirstname(e.target.value)}/>
+            <Input placeholder="Last name" value={last_name} onChange={(e) => setLastname(e.target.value)}/>
             <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
             <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             {error && <p className="text-red-500 text-sm">{error}</p>}

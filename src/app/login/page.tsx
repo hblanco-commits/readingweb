@@ -22,7 +22,7 @@ export default function LoginPage() {
 
 
   
-    const res =await fetch(`${API_BASE}/login`, {
+    const res = await fetch('https://blanconestjs.onrender.com/auth/login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password}),
@@ -53,9 +53,16 @@ export default function LoginPage() {
         </form>
 
         <Button variant="link" className="mt-2 w-full" onClick={() => router.push('/register')}>create an account</Button>
+        <Button variant="link" className=" mt-2 w-full text-center bg-white text-black rounded-full" onClick={() => router.push('/')}>Back</Button>
         </CardContent>
         </Card>
+        
+
+        
+
         </div>
+
+
         
 
     );

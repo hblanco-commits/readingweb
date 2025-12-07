@@ -32,7 +32,7 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-gradient-to-r from-teal-300 to-blue-500 p-10">
       <header className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <h1 className="text-xl font-bold px-130 py-2 bg-white text-black edgy-full">Books</h1>
         <Button variant="destructive" onClick={handleLogout}>Logout</Button>
       </header>
       {children}

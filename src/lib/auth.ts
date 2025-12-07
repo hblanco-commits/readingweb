@@ -1,20 +1,26 @@
-export const TOKEN_KEY = "accessToken";
+"use client";
 
 export function saveToken(token: string) {
-    if (typeof window !== 'undefined') {
-        localStorage.setItem(TOKEN_KEY, token);
-    }
+  if (typeof window !== "undefined") {
+    localStorage.setItem("token", token);
+  }
 }
 
-export function getToken(): string | null {
+export function getToken() {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("token");
+  }
+  return null;
+}
 
-    if (typeof window !== 'undefined') {
-        return localStorage.getItem(TOKEN_KEY);
-    }
-     return null;
+export function removeToken() {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("token");
+  }
 }
 
 export function logoutUser() {
-
-    if (typeof window !== 'undefined') localStorage.removeItem(TOKEN_KEY);
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("token");
+  }
 }

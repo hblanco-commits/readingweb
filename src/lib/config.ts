@@ -1,1 +1,1 @@
-export const API_BASE =  'https://blanconestjs.onrender.com/auth';
+export const API_BASE = 'https://blanconestjs.onrender.com';
